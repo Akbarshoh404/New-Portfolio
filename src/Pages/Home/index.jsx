@@ -1,6 +1,7 @@
 import React from "react";
 
 import Navabar from "../../Layoutes/Navbar";
+import Footer from "../../Layoutes/Footer";
 
 import styles from "./style.module.scss";
 
@@ -32,6 +33,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
