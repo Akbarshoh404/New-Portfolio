@@ -4,6 +4,7 @@ import styles from "./style.module.scss";
 
 const Navabar = () => {
   const [active, setActive] = useState("Home");
+  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -22,6 +23,11 @@ const Navabar = () => {
   const handleNavigation = (item) => {
     setActive(item);
     navigate(`/${item.toLowerCase() === "home" ? "" : item.toLowerCase()}`);
+    setIsOpen(false);
+  };
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
   };
 
   return (
@@ -31,7 +37,11 @@ const Navabar = () => {
           <p onClick={() => handleNavigation("Home")}>Mr.Akbarshokh</p>
         </div>
 
-        <div className={styles.right}>
+        <button className={styles.hamburger} onClick={toggleMenu}>
+          {isOpen ? "✕" : "☰"}
+        </button>
+
+        <div className={`${styles.right} ${isOpen ? styles.open : ""}`}>
           {["Home", "Projects", "Experience", "About"].map((item) => (
             <p
               key={item}
