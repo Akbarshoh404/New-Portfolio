@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif; // Change to any preferred font
+  font-family: "Poppins", sans-serif;
 }
 
 .navbar {
@@ -10,6 +10,7 @@
   height: 10vh;
   background-color: #222222;
   color: white;
+  border-bottom: 2px solid #333333;
 }
 
 .container {
@@ -25,6 +26,15 @@
   font-size: 26px;
   font-weight: 700;
   cursor: pointer;
+
+  p {
+    color: white;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: #e0e0e0;
+    }
+  }
 }
 
 .right {
@@ -32,18 +42,23 @@
   align-items: center;
   justify-content: center;
   gap: 75px;
-}
 
-.right p {
-  cursor: pointer;
-  transition: color 0.3s ease-in-out;
-  font-size: 18px;
-}
+  p {
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    font-size: 18px;
 
-.active {
-  color: white;
-}
+    &.active {
+      color: white;
+      font-weight: 600;
+    }
 
-.inactive {
-  color: #919191;
+    &.inactive {
+      color: #919191;
+    }
+
+    &:hover {
+      color: #e0e0e0;
+    }
+  }
 }
