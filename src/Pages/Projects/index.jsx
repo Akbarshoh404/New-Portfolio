@@ -49,17 +49,27 @@ const Projects = () => {
     variableWidth: false,
     responsive: [
       {
-        breakpoint: 1350,
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          arrows: true,
         },
       },
       {
-        breakpoint: 900,
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          arrows: true,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
         },
       },
     ],
@@ -69,6 +79,7 @@ const Projects = () => {
     <>
       <Navabar />
       <div className={styles.projects}>
+        <h1 className={styles.projectsTitle}>Projects</h1>
         <div className={styles.container}>
           <Slider {...settings}>
             {projectsData.map((project) => (

@@ -10,18 +10,24 @@
   background: #222222;
   color: white;
   display: flex;
+  flex-direction: column;
   align-items: center;
   padding: 2rem 0;
 }
 
+.projectsTitle {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
 .container {
   width: 85%;
-  max-width: 1350px;
   margin: auto;
   position: relative;
 }
 
-/* Slider specific styles */
 .slick-slider {
   position: relative;
 }
@@ -36,58 +42,58 @@
 }
 
 .cardWrapper {
-  padding: 0 1.25rem;
-  width: 450px !important;
+  padding: 0 clamp(0.5rem, 2vw, 1.25rem);
+  width: 100% !important;
 }
 
 .card {
-  width: 400px;
+  width: 100%;
   background: #333;
   border-radius: 10px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  &:hover {
-    transform: translateY(-8px);
-  }
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .cardImage {
   width: 100%;
-  height: 300px;
+  height: clamp(150px, 40vw, 300px);
   object-fit: cover;
 }
 
 .cardTitle {
-  padding: 1.5rem;
-  font-size: 1.5rem;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(1rem, 3vw, 1.5rem);
   text-align: center;
 }
 
 .cardLinks {
-  padding: 0 1.5rem 1.5rem;
+  padding: 0 clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 1.5rem);
   display: flex;
-  gap: 1.5rem;
+  gap: clamp(0.5rem, 2vw, 1.5rem);
   justify-content: center;
 }
 
 .link {
   color: #fff;
   text-decoration: none;
-  padding: 0.75rem 1.5rem;
+  padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 2vw, 1.5rem);
   background: #444;
   border-radius: 6px;
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
   transition: background 0.3s ease;
-
-  &:hover {
-    background: #555;
-  }
 }
 
-/* Custom arrow styles */
+.link:hover {
+  background: #555;
+}
+
 .slick-arrow {
   position: absolute;
   top: 50%;
@@ -95,9 +101,9 @@
   background: rgba(255, 255, 255, 0.2);
   border: none;
   color: white;
-  font-size: 3rem; // Increased from 2rem to 3rem
-  width: 70px; // Increased from 50px to 70px
-  height: 70px; // Increased from 50px to 70px
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  width: clamp(40px, 6vw, 70px);
+  height: clamp(40px, 6vw, 70px);
   border-radius: 50%;
   cursor: pointer;
   transition: background 0.3s ease;
@@ -105,26 +111,32 @@
   display: flex !important;
   align-items: center;
   justify-content: center;
+}
 
-  &:hover {
-    background: rgba(255, 255, 255, 0.4);
-  }
+.slick-arrow:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
 
-  &.slick-disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
+.slick-arrow.slick-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .slick-prev {
-  left: 30px; // Adjusted from 20px to 30px to account for larger size
+  left: clamp(10px, 2vw, 30px);
 }
 
 .slick-next {
-  right: 30px; // Adjusted from 20px to 30px to account for larger size
+  right: clamp(10px, 2vw, 30px);
 }
 
 .slick-prev:before,
 .slick-next:before {
   display: none;
+}
+
+@media (max-width: 480px) {
+  .cardWrapper {
+    padding: 0 0.5rem;
+  }
 }
