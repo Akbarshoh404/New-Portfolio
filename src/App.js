@@ -4,6 +4,8 @@ import Home from "./Pages/Home";
 import Projects from "./Pages/Projects";
 import Experience from "./Pages/Experience";
 
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 function App() {
   return (
     <>
