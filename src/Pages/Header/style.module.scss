@@ -12,13 +12,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 70px 20px 20px 20px; // Added top padding for navbar
+
+  @media (max-width: 768px) {
+    padding-top: 60px; // Adjust for smaller screens if navbar height changes
+  }
 }
 
 .container {
   width: 85%;
   max-width: 1200px;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,14 +35,13 @@
 }
 
 .left {
-  width: 100%;
+  flex: 1; // Changed from width: 100% to flex for better responsiveness
   display: flex;
   justify-content: center;
   align-items: center;
 
   @media (max-width: 768px) {
-    width: 100%;
-    margin-top: 20px;
+    margin-top: 0; // Removed unnecessary margin-top
   }
 }
 
@@ -54,34 +56,32 @@
 
   p {
     font-size: 300px;
-    height: 450px;
-    width: 450px;
+    margin: 0; // Ensure no extra margins
     display: flex;
     align-items: center;
     justify-content: center;
 
     @media (max-width: 1024px) {
       font-size: 200px;
-      height: 300px;
-      width: 300px;
     }
 
     @media (max-width: 768px) {
       font-size: 150px;
-      height: 200px;
-      width: 200px;
     }
 
     @media (max-width: 480px) {
       font-size: 100px;
-      height: 150px;
-      width: 150px;
     }
   }
 
   @media (max-width: 1024px) {
     padding: 40px;
     border-width: 15px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 30px;
+    border-width: 12px;
   }
 
   @media (max-width: 480px) {
@@ -91,17 +91,15 @@
 }
 
 .right {
-  width: 100%;
+  flex: 1; // Changed from width: 100% to flex
   display: flex;
-  justify-content: center;
   flex-direction: column;
   gap: 40px;
 
   @media (max-width: 768px) {
-    width: 100%;
     gap: 20px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 0; // Removed unnecessary margin-bottom
   }
 }
 

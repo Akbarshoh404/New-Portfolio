@@ -12,18 +12,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 0;
+  padding: 70px 0 2rem 0;
 }
 
 .projectsTitle {
-  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-size: clamp(2rem, 6vw, 3.5rem); // Increased from 1.5rem-2.5rem
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem; // Slightly increased
   text-align: center;
+  background: linear-gradient(to right, #ff8a00, #e52e71);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .container {
   width: 85%;
+  max-width: 1400px; // Increased from 1200px to accommodate larger cards
   margin: auto;
   position: relative;
 }
@@ -38,72 +42,75 @@
 
 .slick-track {
   display: flex;
-  align-items: center;
+  align-items: stretch;
 }
 
 .cardWrapper {
-  padding: 20px clamp(0.5rem, 2vw, 1.25rem);
-  width: 100% !important;
+  padding: 30px clamp(0.75rem, 2.5vw, 1.5rem); // Increased padding
+  height: 100%;
 }
 
 .card {
   width: 100%;
   background: #333;
-  border-radius: 10px;
+  border-radius: 15px; // Slightly larger radius
   overflow: hidden;
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transform: translateY(-10px); // Increased lift effect
+  box-shadow: 0 10px 20px rgba(229, 46, 113, 0.3);
 }
 
 .cardImage {
   width: 100%;
-  height: clamp(150px, 40vw, 300px);
+  height: clamp(200px, 45vw, 400px); // Increased from 150px-300px
   object-fit: cover;
 }
 
 .cardTitle {
-  padding: clamp(1rem, 2vw, 1.5rem);
-  font-size: clamp(1rem, 3vw, 1.5rem);
+  padding: clamp(1.25rem, 2.5vw, 2rem); // Increased padding
+  font-size: clamp(1.25rem, 3.5vw, 2rem); // Increased from 1rem-1.5rem
   text-align: center;
+  color: #fff;
 }
 
 .cardLinks {
-  padding: 0 clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 1.5rem);
+  padding: 0 clamp(1.25rem, 2.5vw, 2rem) clamp(1.25rem, 2.5vw, 2rem); // Increased padding
   display: flex;
-  gap: clamp(0.5rem, 2vw, 1.5rem);
+  gap: clamp(0.75rem, 2.5vw, 2rem); // Increased gap
   justify-content: center;
+  margin-top: auto;
 }
 
 .link {
   color: #fff;
   text-decoration: none;
-  padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 2vw, 1.5rem);
-  background: #444;
-  border-radius: 6px;
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(1.25rem, 2.5vw, 2rem); // Increased padding
+  background: #ff8a00;
+  border-radius: 8px; // Slightly larger radius
+  font-size: clamp(1rem, 2.5vw, 1.5rem); // Increased from 0.9rem-1.1rem
   transition: background 0.3s ease;
 }
 
 .link:hover {
-  background: #555;
+  background: #e52e71;
 }
 
 .slick-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 138, 0, 0.7);
   border: none;
   color: white;
-  font-size: clamp(1.5rem, 4vw, 3rem);
-  width: clamp(40px, 6vw, 70px);
-  height: clamp(40px, 6vw, 70px);
+  font-size: clamp(2rem, 5vw, 4rem); // Increased from 1.5rem-3rem
+  width: clamp(50px, 7vw, 80px); // Increased from 40px-70px
+  height: clamp(50px, 7vw, 80px);
   border-radius: 50%;
   cursor: pointer;
   transition: background 0.3s ease;
@@ -114,7 +121,7 @@
 }
 
 .slick-arrow:hover {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(229, 46, 113, 0.7);
 }
 
 .slick-arrow.slick-disabled {
@@ -123,11 +130,11 @@
 }
 
 .slick-prev {
-  left: clamp(10px, 2vw, 30px);
+  left: clamp(15px, 2.5vw, 40px); // Increased offset
 }
 
 .slick-next {
-  right: clamp(10px, 2vw, 30px);
+  right: clamp(15px, 2.5vw, 40px); // Increased offset
 }
 
 .slick-prev:before,
@@ -135,8 +142,24 @@
   display: none;
 }
 
+@media (max-width: 768px) {
+  .projects {
+    padding: 60px 0 2rem 0;
+  }
+
+  .cardWrapper {
+    padding: 15px clamp(0.75rem, 2vw, 1.25rem); // Adjusted for smaller screens
+  }
+}
+
 @media (max-width: 480px) {
   .cardWrapper {
-    padding: 0 0.5rem;
+    padding: 10px 0.75rem;
+  }
+
+  .slick-arrow {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
   }
 }

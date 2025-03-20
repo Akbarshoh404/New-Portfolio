@@ -1,6 +1,4 @@
 import React from "react";
-import Navabar from "../../Layoutes/Navbar";
-import Footer from "../../Layoutes/Footer";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -69,52 +67,50 @@ const Projects = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows: false,
+          arrows: true,
         },
       },
     ],
   };
 
   return (
-    <>
-      <div className={styles.projects}>
-        <h1 className={styles.projectsTitle}>Projects</h1>
-        <div className={styles.container}>
-          <Slider {...settings}>
-            {projectsData.map((project) => (
-              <div key={project.id} className={styles.cardWrapper}>
-                <div className={styles.card}>
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className={styles.cardImage}
-                  />
-                  <h3 className={styles.cardTitle}>{project.title}</h3>
-                  <div className={styles.cardLinks}>
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.link}
-                    >
-                      GitHub
-                    </a>
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.link}
-                    >
-                      Live Demo
-                    </a>
-                  </div>
+    <div className={styles.projects}>
+      <h1 className={styles.projectsTitle}>Projects</h1>
+      <div className={styles.container}>
+        <Slider {...settings}>
+          {projectsData.map((project) => (
+            <div key={project.id} className={styles.cardWrapper}>
+              <div className={styles.card}>
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className={styles.cardImage}
+                />
+                <h3 className={styles.cardTitle}>{project.title}</h3>
+                <div className={styles.cardLinks}>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.link}
+                  >
+                    GitHub
+                  </a>
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.link}
+                  >
+                    Live Demo
+                  </a>
                 </div>
               </div>
-            ))}
-          </Slider>
-        </div>
+            </div>
+          ))}
+        </Slider>
       </div>
-    </>
+    </div>
   );
 };
 

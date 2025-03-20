@@ -1,9 +1,8 @@
-// Portfolio.jsx
 import React from "react";
 import styles from "./style.module.scss";
 import Navbar from "../Layoutes/Navbar";
 import Footer from "../Layoutes/Footer";
-import Home from "./Home/index";
+import Home from "./Header/index";
 import About from "./About/index";
 import Experience from "./Experience/index";
 import Projects from "./Projects/index";
