@@ -8,15 +8,17 @@ const Experience = () => {
   const experiences = [
     {
       year: "2023 - Present",
-      title: "Senior Developer",
-      company: "Tech Corp",
-      description: "Led team in developing scalable web applications",
+      title: "Junior Front-end Wizard",
+      company: "Freelance Trailblazer",
+      description:
+        "As a teenage coding prodigy, I dove headfirst into a whirlwind of real-world projects, crafting pixel-perfect interfaces and mastering the art of problem-solving with every line of code. Experience? I’ve got a treasure chest full of it!",
     },
     {
-      year: "2020 - 2023",
-      title: "Frontend Developer",
-      company: "Web Solutions",
-      description: "Built responsive UI components and optimized performance",
+      year: "2025 - Beyond the Horizon",
+      title: "Frontend Visionary",
+      company: "Dream Collaborations Inc.",
+      description:
+        "Gearing up to conquer the digital frontier, I’m set to weave magic on epic projects alongside brilliant minds from every corner of the globe. Big ideas, bold designs, and boundless creativity—watch this space!",
     },
   ];
 
