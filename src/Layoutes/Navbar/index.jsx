@@ -1,28 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import React, { useState } from "react";
 import styles from "./style.module.scss";
 
-const Navabar = () => {
+const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [isOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  useEffect(() => {
-    const path = location.pathname.slice(1) || "home";
-    const activeItem = ["home", "projects", "experience", "about"].find(
-      (item) => item === path.toLowerCase()
-    );
-    setActive(
-      activeItem
-        ? activeItem.charAt(0).toUpperCase() + activeItem.slice(1)
-        : "Home"
-    );
-  }, [location.pathname]);
 
   const handleNavigation = (item) => {
     setActive(item);
-    navigate(`/${item.toLowerCase() === "home" ? "" : item.toLowerCase()}`);
+    const sectionId = item.toLowerCase();
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
     setIsOpen(false);
   };
 
@@ -57,4 +46,4 @@ const Navabar = () => {
   );
 };
 
-export default Navabar;
+export default Navbar;

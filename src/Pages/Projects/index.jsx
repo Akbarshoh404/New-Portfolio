@@ -77,7 +77,6 @@ const Projects = () => {
 
   return (
     <>
-      <Navabar />
       <div className={styles.projects}>
         <h1 className={styles.projectsTitle}>Projects</h1>
         <div className={styles.container}>
@@ -115,7 +114,6 @@ const Projects = () => {
           </Slider>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

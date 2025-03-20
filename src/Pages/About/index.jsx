@@ -6,7 +6,6 @@ import styles from "./style.module.scss";
 const About = () => {
   return (
     <>
-      <Navbar />
       <div className={styles.about}>
         <div className={styles.container}>
           <h1 className={styles.title}>About Me</h1>
@@ -49,7 +48,6 @@ const About = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

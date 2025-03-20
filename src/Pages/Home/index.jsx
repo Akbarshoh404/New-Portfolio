@@ -6,7 +6,6 @@ import styles from "./style.module.scss";
 const Home = () => {
   return (
     <>
-      <Navabar />
       <div className={styles.home}>
         <div className={styles.container}>
           <div className={styles.left}>
@@ -26,7 +25,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

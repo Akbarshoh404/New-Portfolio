@@ -63,42 +63,38 @@ const Experience = () => {
   };
 
   return (
-    <>
-      <Navbar />
-      <div className={styles.experience}>
-        <div className={styles.container}>
-          <h1 className={styles.title}>Experience</h1>
+    <div className={styles.experience}>
+      <div className={styles.container}>
+        <h1 className={styles.title}>Experience</h1>
 
-          <div className={styles.timeline}>
-            {experiences.map((exp, index) => (
-              <div key={index} className={styles.timelineItem}>
-                <div className={styles.timelineContent}>
-                  <span className={styles.year}>{exp.year}</span>
-                  <h3>{exp.title}</h3>
-                  <h4>{exp.company}</h4>
-                  <p>{exp.description}</p>
+        <div className={styles.timeline}>
+          {experiences.map((exp, index) => (
+            <div key={index} className={styles.timelineItem}>
+              <div className={styles.timelineContent}>
+                <span className={styles.year}>{exp.year}</span>
+                <h3>{exp.title}</h3>
+                <h4>{exp.company}</h4>
+                <p>{exp.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className={styles.skills}>
+          <h2 className={styles.skillsTitle}>Skills</h2>
+          <Slider {...settings} className={styles.skillsCarousel}>
+            {skills.map((skill, index) => (
+              <div key={index} className={styles.skillItemWrapper}>
+                <div className={styles.skillItem}>
+                  <i className={`${skill.icon} ${styles.skillIcon}`}></i>
+                  <span>{skill.name}</span>
                 </div>
               </div>
             ))}
-          </div>
-
-          <div className={styles.skills}>
-            <h2 className={styles.skillsTitle}>Skills</h2>
-            <Slider {...settings} className={styles.skillsCarousel}>
-              {skills.map((skill, index) => (
-                <div key={index} className={styles.skillItemWrapper}>
-                  <div className={styles.skillItem}>
-                    <i className={`${skill.icon} ${styles.skillIcon}`}></i>
-                    <span>{skill.name}</span>
-                  </div>
-                </div>
-              ))}
-            </Slider>
-          </div>
+          </Slider>
         </div>
       </div>
-      <Footer />
-    </>
+    </div>
   );
 };
 
