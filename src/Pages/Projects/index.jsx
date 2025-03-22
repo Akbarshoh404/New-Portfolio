@@ -1,35 +1,49 @@
+// Projects.jsx
 import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from "./style.module.scss";
 
+import edurate from "../../Components/images/EduRate.png";
+import zakovat from "../../Components/images/zakovat.png";
+import tetra from "../../Components/images/tetra textile.jpg";
+import cambridge from "../../Components/images/cambridge.png";
+import core from "../../Components/images/core.png";
+
 const projectsData = [
   {
     id: 1,
-    title: "Project One",
-    image: "https://via.placeholder.com/400x300",
+    title: "EduRate",
+    image: edurate,
     github: "https://github.com/username/project1",
     demo: "https://project1-demo.com",
   },
   {
     id: 2,
-    title: "Project Two",
-    image: "https://via.placeholder.com/400x300",
+    title: "Zakovat",
+    image: zakovat,
     github: "https://github.com/username/project2",
     demo: "https://project2-demo.com",
   },
   {
     id: 3,
-    title: "Project Three",
-    image: "https://via.placeholder.com/400x300",
+    title: "Tetra Textile",
+    image: tetra,
     github: "https://github.com/username/project3",
     demo: "https://project3-demo.com",
   },
   {
     id: 4,
-    title: "Project Four",
-    image: "https://via.placeholder.com/400x300",
+    title: "Cambrdige",
+    image: cambridge,
+    github: "https://github.com/username/project4",
+    demo: "https://project4-demo.com",
+  },
+  {
+    id: 5,
+    title: "Core Collection",
+    image: core,
     github: "https://github.com/username/project4",
     demo: "https://project4-demo.com",
   },
@@ -38,20 +52,21 @@ const projectsData = [
 const Projects = () => {
   const settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: true,
     centerMode: false,
-    variableWidth: false,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          arrows: true,
         },
       },
       {
@@ -59,7 +74,6 @@ const Projects = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows: true,
         },
       },
       {
@@ -67,14 +81,13 @@ const Projects = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows: true,
         },
       },
     ],
   };
 
   return (
-    <div className={styles.projects}>
+    <section className={styles.projects}>
       <h1 className={styles.projectsTitle}>Projects</h1>
       <div className={styles.container}>
         <Slider {...settings}>
@@ -110,7 +123,7 @@ const Projects = () => {
           ))}
         </Slider>
       </div>
-    </div>
+    </section>
   );
 };
 

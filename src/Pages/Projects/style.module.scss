@@ -1,3 +1,4 @@
+// style.module.scss
 * {
   margin: 0;
   padding: 0;
@@ -6,83 +7,89 @@
 
 .projects {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   background: #222222;
   color: white;
+  padding-top: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 70px 0 2rem 0;
+  justify-content: center;
 }
 
 .projectsTitle {
-  font-size: clamp(2rem, 6vw, 3.5rem); // Increased from 1.5rem-2.5rem
+  font-size: clamp(2rem, 6vw, 3.5rem);
   font-weight: 700;
-  margin-bottom: 2.5rem; // Slightly increased
   text-align: center;
   background: linear-gradient(to right, #ff8a00, #e52e71);
   -webkit-background-clip: text;
   color: transparent;
+  padding: 2rem 0;
 }
 
 .container {
-  width: 85%;
-  max-width: 1400px; // Increased from 1200px to accommodate larger cards
-  margin: auto;
-  position: relative;
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  flex-grow: 1;
 }
 
 .slick-slider {
   position: relative;
+  padding: 0 60px;
+  height: 100%;
 }
 
 .slick-list {
   overflow: hidden;
+  height: 100%;
 }
 
 .slick-track {
   display: flex;
-  align-items: stretch;
+  align-items: center;
+  height: 100%;
 }
 
 .cardWrapper {
-  padding: 30px clamp(0.75rem, 2.5vw, 1.5rem); // Increased padding
+  padding: 30px clamp(0.75rem, 2.5vw, 1.5rem);
   height: 100%;
 }
 
 .card {
   width: 100%;
+  max-width: 400px;
   background: #333;
-  border-radius: 15px; // Slightly larger radius
+  border-radius: 15px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
   height: 100%;
+  margin: 0 auto;
 }
 
 .card:hover {
-  transform: translateY(-10px); // Increased lift effect
-  box-shadow: 0 10px 20px rgba(229, 46, 113, 0.3);
+  transform: translateY(-10px);
 }
 
 .cardImage {
   width: 100%;
-  height: clamp(200px, 45vw, 400px); // Increased from 150px-300px
+  height: clamp(200px, 45vw, 400px);
   object-fit: cover;
 }
 
 .cardTitle {
-  padding: clamp(1.25rem, 2.5vw, 2rem); // Increased padding
-  font-size: clamp(1.25rem, 3.5vw, 2rem); // Increased from 1rem-1.5rem
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  font-size: clamp(1.25rem, 3.5vw, 2rem);
   text-align: center;
   color: #fff;
 }
 
 .cardLinks {
-  padding: 0 clamp(1.25rem, 2.5vw, 2rem) clamp(1.25rem, 2.5vw, 2rem); // Increased padding
+  padding: 0 clamp(1.25rem, 2.5vw, 2rem) clamp(1.25rem, 2.5vw, 2rem);
   display: flex;
-  gap: clamp(0.75rem, 2.5vw, 2rem); // Increased gap
+  gap: clamp(0.75rem, 2.5vw, 2rem);
   justify-content: center;
   margin-top: auto;
 }
@@ -90,15 +97,18 @@
 .link {
   color: #fff;
   text-decoration: none;
-  padding: clamp(0.75rem, 2vw, 1rem) clamp(1.25rem, 2.5vw, 2rem); // Increased padding
+  padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 2vw, 1.25rem);
   background: #ff8a00;
-  border-radius: 8px; // Slightly larger radius
-  font-size: clamp(1rem, 2.5vw, 1.5rem); // Increased from 0.9rem-1.1rem
-  transition: background 0.3s ease;
+  border-radius: 25px;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  transition: background 0.3s ease, transform 0.3s ease;
+  min-width: 100px;
+  text-align: center;
 }
 
 .link:hover {
   background: #e52e71;
+  transform: scale(1.05);
 }
 
 .slick-arrow {
@@ -108,8 +118,8 @@
   background: rgba(255, 138, 0, 0.7);
   border: none;
   color: white;
-  font-size: clamp(2rem, 5vw, 4rem); // Increased from 1.5rem-3rem
-  width: clamp(50px, 7vw, 80px); // Increased from 40px-70px
+  font-size: clamp(2rem, 5vw, 4rem);
+  width: clamp(50px, 7vw, 80px);
   height: clamp(50px, 7vw, 80px);
   border-radius: 50%;
   cursor: pointer;
@@ -130,11 +140,11 @@
 }
 
 .slick-prev {
-  left: clamp(15px, 2.5vw, 40px); // Increased offset
+  left: clamp(15px, 2.5vw, 40px);
 }
 
 .slick-next {
-  right: clamp(15px, 2.5vw, 40px); // Increased offset
+  right: clamp(15px, 2.5vw, 40px);
 }
 
 .slick-prev:before,
@@ -148,7 +158,7 @@
   }
 
   .cardWrapper {
-    padding: 15px clamp(0.75rem, 2vw, 1.25rem); // Adjusted for smaller screens
+    padding: 15px clamp(0.75rem, 2vw, 1.25rem);
   }
 }
 

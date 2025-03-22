@@ -31,7 +31,7 @@ const Navbar = () => {
         </button>
 
         <div className={`${styles.right} ${isOpen ? styles.open : ""}`}>
-          {["Home", "Projects", "Experience", "About"].map((item) => (
+          {["Home", "About", "Projects", "Experience"].map((item) => (
             <p
               key={item}
               className={active === item ? styles.active : styles.inactive}

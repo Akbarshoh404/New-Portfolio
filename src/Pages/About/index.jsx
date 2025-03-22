@@ -1,15 +1,21 @@
+// About.jsx
 import React from "react";
 import styles from "./style.module.scss";
+import profilePic from "../../Components/images/profile-pic.png";
 
 const About = () => {
   return (
     <div className={styles.about}>
       <div className={styles.container}>
         <h1 className={styles.title}>About Me</h1>
-
         <div className={styles.aboutContent}>
           <div className={styles.profileCard}>
-            <div className={styles.profileImage}></div>
+            <div className={styles.profileImageWrapper}>
+              <div
+                className={styles.profileImage}
+                style={{ backgroundImage: `url(${profilePic})` }}
+              ></div>
+            </div>
             <div className={styles.profileText}>
               <h2>Hello, I’m [Your Name]</h2>
               <p className={styles.description}>
@@ -20,7 +26,6 @@ const About = () => {
               </p>
             </div>
           </div>
-
           <div className={styles.detailsGrid}>
             <h2 className={styles.subtitle}>The Essentials</h2>
             <div className={styles.gridItems}>
