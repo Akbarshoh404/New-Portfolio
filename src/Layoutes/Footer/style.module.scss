@@ -1,3 +1,4 @@
+/* style.module.scss */
 * {
   margin: 0;
   padding: 0;
@@ -32,28 +33,37 @@
 }
 
 .left p {
+  margin: 0;
+}
+
+.left a {
   color: #919191;
   font-size: clamp(0.9rem, 2vw, 1.25rem);
   cursor: pointer;
   transition: color 0.3s ease-in-out;
+  text-decoration: none;
 }
 
-.left p:hover {
+.left a:hover {
   color: #e0e0e0;
 }
 
 .right {
-  color: #919191;
-  font-size: clamp(0.9rem, 2vw, 1.25rem);
-  cursor: pointer;
   width: fit-content;
   height: 100%;
   display: flex;
   align-items: center;
-  transition: color 0.3s ease-in-out;
 }
 
-.right:hover {
+.right a {
+  color: #919191;
+  font-size: clamp(0.9rem, 2vw, 1.25rem);
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+.right a:hover {
   color: #e0e0e0;
 }
 
@@ -82,7 +92,7 @@
     width: 90%;
   }
 
-  .right {
+  .right a {
     font-size: 16px !important;
   }
 }
