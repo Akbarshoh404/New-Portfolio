@@ -35,7 +35,7 @@ const projectsData = [
   },
   {
     id: 4,
-    title: "Cambrdige",
+    title: "Cambridge",
     image: cambridge,
     github: "https://github.com/username/project4",
     demo: "https://project4-demo.com",
@@ -57,30 +57,40 @@ const Projects = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: true,
-    centerMode: false,
+    centerMode: true,
+    centerPadding: "0px",
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1200,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: "0px",
+          arrows: true,
         },
       },
       {
-        breakpoint: 768,
+        breakpoint: 800,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: "50px",
+          arrows: true,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 600,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: "30px",
+          arrows: true,
         },
       },
     ],
@@ -94,11 +104,13 @@ const Projects = () => {
           {projectsData.map((project) => (
             <div key={project.id} className={styles.cardWrapper}>
               <div className={styles.card}>
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className={styles.cardImage}
-                />
+                <div className={styles.imageContainer}>
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className={styles.cardImage}
+                  />
+                </div>
                 <h3 className={styles.cardTitle}>{project.title}</h3>
                 <div className={styles.cardLinks}>
                   <a

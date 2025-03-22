@@ -10,33 +10,32 @@
   height: 100vh;
   background: #222222;
   color: white;
-  padding-top: 150px;
+  padding-top: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 .projectsTitle {
-  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
   text-align: center;
   background: linear-gradient(to right, #ff8a00, #e52e71);
   -webkit-background-clip: text;
   color: transparent;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
 }
 
 .container {
-  width: 90%;
+  width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   flex-grow: 1;
+  padding: 0 15px;
 }
 
 .slick-slider {
   position: relative;
-  padding: 0 60px;
   height: 100%;
 }
 
@@ -52,7 +51,7 @@
 }
 
 .cardWrapper {
-  padding: 30px clamp(0.75rem, 2.5vw, 1.5rem);
+  padding: clamp(15px, 3vw, 30px);
   height: 100%;
 }
 
@@ -73,23 +72,30 @@
   transform: translateY(-10px);
 }
 
+.imageContainer {
+  width: 100%;
+  height: clamp(250px, 50vw, 350px); // Increased height
+  overflow: hidden;
+}
+
 .cardImage {
   width: 100%;
-  height: clamp(200px, 45vw, 400px);
+  height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .cardTitle {
-  padding: clamp(1.25rem, 2.5vw, 2rem);
-  font-size: clamp(1.25rem, 3.5vw, 2rem);
+  padding: clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
   text-align: center;
   color: #fff;
 }
 
 .cardLinks {
-  padding: 0 clamp(1.25rem, 2.5vw, 2rem) clamp(1.25rem, 2.5vw, 2rem);
+  padding: clamp(0.5rem, 1.5vw, 1rem) clamp(1rem, 2vw, 1.5rem);
   display: flex;
-  gap: clamp(0.75rem, 2.5vw, 2rem);
+  gap: clamp(0.5rem, 1.5vw, 1rem);
   justify-content: center;
   margin-top: auto;
 }
@@ -97,12 +103,12 @@
 .link {
   color: #fff;
   text-decoration: none;
-  padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 2vw, 1.25rem);
+  padding: clamp(0.4rem, 1vw, 0.6rem) clamp(0.8rem, 1.5vw, 1rem);
   background: #ff8a00;
   border-radius: 25px;
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
   transition: background 0.3s ease, transform 0.3s ease;
-  min-width: 100px;
+  min-width: clamp(80px, 15vw, 100px);
   text-align: center;
 }
 
@@ -118,9 +124,9 @@
   background: rgba(255, 138, 0, 0.7);
   border: none;
   color: white;
-  font-size: clamp(2rem, 5vw, 4rem);
-  width: clamp(50px, 7vw, 80px);
-  height: clamp(50px, 7vw, 80px);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  width: clamp(40px, 6vw, 60px);
+  height: clamp(40px, 6vw, 60px);
   border-radius: 50%;
   cursor: pointer;
   transition: background 0.3s ease;
@@ -140,11 +146,11 @@
 }
 
 .slick-prev {
-  left: clamp(15px, 2.5vw, 40px);
+  left: clamp(10px, 2vw, 20px);
 }
 
 .slick-next {
-  right: clamp(15px, 2.5vw, 40px);
+  right: clamp(10px, 2vw, 20px);
 }
 
 .slick-prev:before,
@@ -152,24 +158,52 @@
   display: none;
 }
 
-@media (max-width: 768px) {
-  .projects {
-    padding: 60px 0 2rem 0;
-  }
-
-  .cardWrapper {
-    padding: 15px clamp(0.75rem, 2vw, 1.25rem);
+@media (max-width: 1200px) {
+  .container {
+    width: 95%;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 800px) {
+  .projects {
+    padding: 10px;
+    padding-top: 250px;
+  }
+
+  .projectsTitle {
+    padding: 1rem 0;
+  }
+
   .cardWrapper {
-    padding: 10px 0.75rem;
+    padding: clamp(10px, 2vw, 20px);
+  }
+
+  .imageContainer {
+    height: clamp(250px, 50vw, 350px);
+  }
+}
+
+@media (max-width: 600px) {
+  .projects {
+    padding: 10px;
+    padding-top: 250px;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .cardWrapper {
+    padding: clamp(5px, 1.5vw, 15px);
+  }
+
+  .imageContainer {
+    height: clamp(250px, 50vw, 350px);
   }
 
   .slick-arrow {
-    width: 50px;
-    height: 50px;
-    font-size: 2rem;
+    width: clamp(30px, 5vw, 40px);
+    height: clamp(30px, 5vw, 40px);
+    font-size: clamp(1rem, 3vw, 1.5rem);
   }
 }

@@ -1,13 +1,19 @@
+// Home.jsx
 import React from "react";
 import styles from "./style.module.scss";
+import profileImage from "../../Components/icons/emoji.png";
 
 const Home = () => {
   return (
     <div className={styles.home}>
       <div className={styles.container}>
         <div className={styles.left}>
-          <div className={styles.emojiContainer}>
-            <p>👨‍💻</p>
+          <div className={styles.imageContainer}>
+            <img
+              src={profileImage}
+              alt="Profile"
+              className={styles.profileImage}
+            />
           </div>
         </div>
         <div className={styles.right}>
